@@ -18,6 +18,10 @@ function call($controller, $action) {
         require_once('models/Expense.php');
         $controller = new ExpenseController();
       break;
+      case 'IncomeCategory': 
+        require_once('models/IncomeCategory.php');
+        $controller = new IncomeCategoryController();
+      break;
     }
 
     // Call the action
@@ -28,7 +32,8 @@ function call($controller, $action) {
   $controllers = array(
     'Home' => ['home', 'error'],
     'Income' => ['showForm'],
-    'Expense' => ['showForm']
+    'Expense' => ['showForm'],
+    'IncomeCategory' => ['showForm', 'addCategory']
   );
 
   // Check that the requested controller and action are allowed

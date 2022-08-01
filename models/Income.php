@@ -9,8 +9,8 @@ class Income extends Transaction {
         $db = Db::getInstance();
         $req = $db->query('SELECT * FROM incomes');
 
-        foreach($req->fetchAll() as $expense) {
-            $list[] = new Income($expense['id'], $expense['income_category_id'], $expense['date'], $expense['amount'], $expense['comment']);
+        foreach($req->fetchAll() as $income) {
+            $list[] = $income;
         }
 
         return $list;

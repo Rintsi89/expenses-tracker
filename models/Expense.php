@@ -10,7 +10,7 @@ class Expense extends Transaction {
         $req = $db->query('SELECT * FROM expenses');
 
         foreach($req->fetchAll() as $expense) {
-            $list[] = new Expense($expense['id'], $expense['expense_category_id'], $expense['date'], $expense['amount'], $expense['comment']);
+            $list[] = $expense;
         }
 
         return $list;
